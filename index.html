@@ -42,6 +42,20 @@ button { border:1px solid #246a90;background:#082238;color:#b9edff;border-radius
 @media(max-width:1100px) {.wx{width:224px}.wx-box{padding:11px 12px 10px}.wx-grid{grid-template-columns:1.25fr 1fr .85fr;gap:6px}}
 @media(max-width:880px),(max-height:739px) {.wx{display:none}}
 @media(max-width:700px) {header{height:67px}.right{font-size:8px}.side,.wx{display:none}main{height:calc(100dvh - 255px)}footer{height:188px}.meta{top:8px}.meta.bottom{bottom:0}}
+
+.market { position:absolute;top:28px;right:5%;width:390px;pointer-events:auto; }
+.market-title { margin:0 0 8px;color:#62eaff;font-size:10px;letter-spacing:.2em;font-weight:400; }
+.market-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px; }
+.market-card { min-width:0;border:1px solid #50beff30;background:#030b16e6;padding:7px 5px 4px;box-shadow:0 0 14px #0878b21a; }
+.market-label { font-size:9px;letter-spacing:.12em;color:#8ad9f4;padding:0 5px 5px; }
+.market-widget { min-height:126px;position:relative; }
+.market-loading { position:absolute;inset:0;display:grid;place-items:center;color:#5b99b6;font-size:9px;letter-spacing:.15em; }
+.market-card a { color:#69a7c5;font-size:8px;text-decoration:none; }
+.market-note { margin:8px 0 0;color:#6589a7;font-size:9px;line-height:1.6; }
+.side.right { top:max(50%,525px); }
+@media(min-width:881px) and (max-height:1000px) {main{min-height:650px}body{overflow:auto}}
+@media(max-width:1100px) {.market{right:3%;width:350px}.market-title{font-size:9px;letter-spacing:.12em}}
+@media(max-width:880px) {body{overflow:auto}.market{top:100%;right:5%;width:90%;max-width:430px}.side.right{display:none}footer{margin-top:510px}.market-title{font-size:10px}}
 </style>
 </head>
 <body>
@@ -50,6 +64,35 @@ button { border:1px solid #246a90;background:#082238;color:#b9edff;border-radius
 <main>
 <canvas id="orb" aria-label="青く発光し、音声に反応して動く球体"></canvas>
 <div class="overlays"><div class="meta">VISUAL CORE / 01</div><div class="meta bottom" id="sync">SYNCHRONIZATION / 00%</div><div class="side left">SIGNAL INTERFACE<b>AI VOICE</b><small>VOICE FIELD DISPLAY</small><small>LOCAL VISUALIZATION</small></div><div class="side right">SIGNAL MONITOR<b id="signal">00%</b><small>INPUT AMPLITUDE</small><small>LIVE ANALYSIS</small></div>
+<section class="market" aria-label="Global market monitor">
+<h2 class="market-title">GLOBAL MARKET MONITOR / 01</h2>
+<div class="market-grid"><div class="market-card"><div class="market-label">NIKKEI 225</div>
+<div class="tradingview-widget-container"><div class="market-widget tradingview-widget-container__widget"><span class="market-loading">LOADING</span></div>
+<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/TVC-NI225/" rel="noopener nofollow" target="_blank">NIKKEI 225 by TradingView</a></div>
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async onerror="this.parentElement.querySelector('.market-widget').textContent='UNAVAILABLE — 配信元リンクをご利用ください'">{"symbol": "TVC:NI225", "width": "100%", "colorTheme": "dark", "isTransparent": true, "locale": "en"}</script></div></div>
+<div class="market-card"><div class="market-label">TOPIX</div>
+<div class="tradingview-widget-container"><div class="market-widget tradingview-widget-container__widget"><span class="market-loading">LOADING</span></div>
+<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/TSE-TOPIX/" rel="noopener nofollow" target="_blank">TOPIX by TradingView</a></div>
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async onerror="this.parentElement.querySelector('.market-widget').textContent='UNAVAILABLE — 配信元リンクをご利用ください'">{"symbol": "TSE:TOPIX", "width": "100%", "colorTheme": "dark", "isTransparent": true, "locale": "en"}</script></div></div>
+<div class="market-card"><div class="market-label">S&amp;P 500</div>
+<div class="tradingview-widget-container"><div class="market-widget tradingview-widget-container__widget"><span class="market-loading">LOADING</span></div>
+<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/SP-SPX/" rel="noopener nofollow" target="_blank">S&amp;P 500 by TradingView</a></div>
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async onerror="this.parentElement.querySelector('.market-widget').textContent='UNAVAILABLE — 配信元リンクをご利用ください'">{"symbol": "SP:SPX", "width": "100%", "colorTheme": "dark", "isTransparent": true, "locale": "en"}</script></div></div>
+<div class="market-card"><div class="market-label">NASDAQ 100</div>
+<div class="tradingview-widget-container"><div class="market-widget tradingview-widget-container__widget"><span class="market-loading">LOADING</span></div>
+<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-NDX/" rel="noopener nofollow" target="_blank">NASDAQ 100 by TradingView</a></div>
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async onerror="this.parentElement.querySelector('.market-widget').textContent='UNAVAILABLE — 配信元リンクをご利用ください'">{"symbol": "NASDAQ:NDX", "width": "100%", "colorTheme": "dark", "isTransparent": true, "locale": "en"}</script></div></div>
+<div class="market-card"><div class="market-label">USD / JPY</div>
+<div class="tradingview-widget-container"><div class="market-widget tradingview-widget-container__widget"><span class="market-loading">LOADING</span></div>
+<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/FX-USDJPY/" rel="noopener nofollow" target="_blank">USD / JPY by TradingView</a></div>
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async onerror="this.parentElement.querySelector('.market-widget').textContent='UNAVAILABLE — 配信元リンクをご利用ください'">{"symbol": "FX:USDJPY", "width": "100%", "colorTheme": "dark", "isTransparent": true, "locale": "en"}</script></div></div>
+<div class="market-card"><div class="market-label">VIX</div>
+<div class="tradingview-widget-container"><div class="market-widget tradingview-widget-container__widget"><span class="market-loading">LOADING</span></div>
+<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/CBOE-VIX/" rel="noopener nofollow" target="_blank">VIX by TradingView</a></div>
+<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async onerror="this.parentElement.querySelector('.market-widget').textContent='UNAVAILABLE — 配信元リンクをご利用ください'">{"symbol": "CBOE:VIX", "width": "100%", "colorTheme": "dark", "isTransparent": true, "locale": "en"}</script></div></div></div>
+<p class="market-note">TradingView公式配信・遅延／休場情報は各表示を参照。<br>データ更新日時：提供元表示に準拠（取得できない日時は表示しません）。</p>
+<noscript><p class="market-note">市場データの表示にはJavaScriptが必要です。</p></noscript>
+</section>
 <div class="wx" role="group" aria-label="今日の日付と天気">
 <div class="wx-title">TODAY / ENVIRONMENT</div>
 <div class="wx-box">
